@@ -19,5 +19,10 @@ public class Main {
         System.out.println("A game has been started with " + newGame.players + " new players, everyone starts with one animal. \n Rules: \n ");
         System.out.println(newGame.showScore());
 
+        for (int i = 0; i <  newGame.players; i++) {
+            newGame.showAnimals(i);
+        }
+
+
     }
 }

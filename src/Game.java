@@ -9,7 +9,7 @@ public class Game {
     int availablePlantFood;
     int round;
     int[] score;
-    int[][] animals;
+    int[][][] animals;
     public Game(int players) {
         this.players = players;
         this.availablePlantFood = 0;
@@ -18,23 +18,21 @@ public class Game {
         for (int i = 0; i < players; i++) {
             score[i] = 0;
         }
-        this.animals = new int[players][10];
+        this.animals = new int[players][4][11];
         for (int i = 0; i < players; i++) {
-            animals[i][0] = 1;
+            animals[i][0][5] = 1;
         }
     }
 
-    public void newAnimal(int playerX){
-        int[][] animalSwitch = this.animals;
-        this.animals = new int [animalSwitch.length+1][3];
-        for (int i = 0; i < animalSwitch.length; i++){
-            for (int j = 0; j < animalSwitch[i].length; j++){
-                this.animals[i][j] = animalSwitch[i][j];
+    public void showAnimals(int playerX) {
+        System.out.println("Player " + playerX);
+        for (int j = 0; j < animals[playerX].length; j++) {
+            for (int k = 0; k < animals[playerX][j].length; k++) {
+                System.out.print(animals[playerX][j][k]);
             }
+            System.out.println();
         }
-
     }
-
     public void nextRound (){
         round++;
     }
@@ -45,7 +43,7 @@ public class Game {
         String showScore = "Round " + this.round;
         showScore += "\t Player \t Score \n";
         for (int i = 0; i < score.length; i++) {
-            showScore += "Player " + (i+1) + "\t" + score[i][1] + "\n";
+            showScore += "Player " + (i+1) + "\t" + score[i] + "\n";
         }
         return showScore;
     }
