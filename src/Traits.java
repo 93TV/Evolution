@@ -6,7 +6,7 @@
  */
 public class Traits {
     String name;
-    String discription;
+    String description;
     int foodSupply;
     boolean isHerbivoreTrait;
     boolean isCarnivoreTrait;

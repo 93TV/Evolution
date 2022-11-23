@@ -12,20 +12,27 @@ public class Animal {
     int population;
     String[] traits;
     int hunger;
+    boolean created;
 
-    public Animal() {
+    public Animal(String name) {
         this.bodySize = 1;
         this.population = 1;
-        traits = new String[3];
-        name = giveAnimalname();
-        hunger = population;
+        this.traits = new String[3];
+        this.name = name;
+        this.hunger = this.population;
+        created =  false;
+
     }
 
-    public String giveAnimalname(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Name your new animal: ");
-        return scan.nextLine();
+    public void CreateAnimal () {
+        created = true;
     }
+
+//    public String giveAnimalname(){
+//        Scanner scan = new Scanner(System.in);
+//        System.out.println("Name your new animal: ");
+//        return scan.nextLine();
+//    }
 
     public void AssignTrait (){
 
@@ -40,7 +47,5 @@ public class Animal {
     public boolean isHungry (){
         return hunger != 0;
     }
-
-
 
 }
