@@ -18,21 +18,8 @@ public class Game {
         for (int i = 0; i < players; i++) {
             score[i] = 0;
         }
-        this.animals = new int[players][4][11];
-        for (int i = 0; i < players; i++) {
-            animals[i][0][5] = 1;
-        }
     }
 
-    public void showAnimals(int playerX) {
-        System.out.println("Player " + playerX);
-        for (int j = 0; j < animals[playerX].length; j++) {
-            for (int k = 0; k < animals[playerX][j].length; k++) {
-                System.out.print(animals[playerX][j][k]);
-            }
-            System.out.println();
-        }
-    }
     public void nextRound (){
         round++;
     }
